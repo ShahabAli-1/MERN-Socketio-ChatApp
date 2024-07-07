@@ -7,7 +7,12 @@ const socket = require("socket.io");
 require("dotenv").config();
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://mern-socketio-chat-app-ie75.vercel.app",
+    credentials: true,
+  })
+);
 app.get("/", (req, res) => {
   return res.json({ msg: "|Helloo" });
 });
