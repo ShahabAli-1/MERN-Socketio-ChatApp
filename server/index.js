@@ -8,6 +8,9 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors());
+app.get("/", (req, res) => {
+  return res.json({ msg: "|Helloo" });
+});
 app.use(express.json());
 app.use("/api/auth", userRoutes);
 app.use("/api/message", messagesRoutes);
