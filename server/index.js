@@ -13,9 +13,11 @@ app.use(
     credentials: true,
   })
 );
+
 app.get("/", (req, res) => {
   return res.json({ msg: "|Helloo" });
 });
+
 app.use(express.json());
 app.use("/api/auth", userRoutes);
 app.use("/api/message", messagesRoutes);
@@ -37,7 +39,7 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = socket(server, {
   cors: {
-    origin: "https://mern-socketio-chat-app-ie75.vercel.app/",
+    origin: "https://mern-socketio-chat-app-ie75.vercel.app",
     credentials: true,
   },
 });
